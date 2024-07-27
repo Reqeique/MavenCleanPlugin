@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="MavenCleanPlugin.commands.category"
+            name="Sample Category">
+      </category>
+      <command
+            categoryId="MavenCleanPlugin.commands.category"
+            name="Sample Command"
+            id="MavenCleanPlugin.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="mavencleanplugin.handlers.SampleHandler"
+            commandId="MavenCleanPlugin.commands.sampleCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="MavenCleanPlugin.commands.sampleCommand"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="MavenCleanPlugin.menus.sampleMenu"
+               label="Sample Menu"
+               mnemonic="M">
+            <command
+                  commandId="MavenCleanPlugin.commands.sampleCommand"
+                  id="MavenCleanPlugin.menus.sampleCommand"
+                  mnemonic="S">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="MavenCleanPlugin.toolbars.sampleToolbar">
+            <command
+                  id="MavenCleanPlugin.toolbars.sampleCommand"
+                  commandId="MavenCleanPlugin.commands.sampleCommand"
+                  icon="icons/sample.png"
+                  tooltip="Maven Clean">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.console.consoleFactories">
+   </extension>
+   <extension
+         point="org.eclipse.ui.console.consolePageParticipants">
+   </extension>
+   <extension
+         point="org.eclipse.ui.console.consolePatternMatchListeners">
+   </extension>
+   <extension
+         point="org.eclipse.core.resources.builders">
+   </extension>
+   <extension
+         point="org.eclipse.core.resources.filterMatchers">
+   </extension>
+
+</plugin>
